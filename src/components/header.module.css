@@ -1,0 +1,61 @@
+.headercontainer {
+  width: 100vw;
+  height: 65px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 10px 7px -10px rgba(0, 0, 0, 0.052);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 96%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  display: flex;
+  gap: 50px;
+}
+
+.header .logo nav {
+  display: flex;
+  align-items: center;
+}
+
+.header .menu {
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 45px;
+  color: black;
+}
+
+.header .menu div {
+  cursor: pointer;
+}
+
+.header .searchButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.header .searchButton i {
+  background-color: rgb(247, 249, 255);
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.header .searchButton button {
+  padding: 11px 20px;
+  color: white;
+  background-color: #0040d4;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
