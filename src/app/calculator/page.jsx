@@ -5,42 +5,45 @@ const { useState } = require("react");
 const Calculator = () => {
   const [screen, setScreen] = useState("");
   let [operationCounter, setOperationCounter] = useState(0);
-  const [operation, setOperation] = useState("");
+  // const [operation, setOperation] = useState("");
   let nums = [];
 
   const buttonClicked = (x) => {
-    switch (x) {
-      case "+":
-        setOperation("+");
-        break;
-      case "-":
-        setOperation("-");
-        break;
-      case "/":
-        setOperation("/");
-        break;
-      case "*":
-        setOperation("*");
-        break;
-      case "%":
-        setOperation("%");
-        break;
+    //   switch (x) {
+    //     case "+":
+    //       setOperation("+");
+    //       break;
+    //     case "-":
+    //       setOperation("-");
+    //       break;
+    //     case "/":
+    //       setOperation("/");
+    //       break;
+    //     case "*":
+    //       setOperation("*");
+    //       break;
+    //     case "%":
+    //       setOperation("%");
+    //       break;
+    //   }
+    let a = operationCounter;
+    if (x === "+" || x === "-" || x === "*" || x === "/" || x === "%") {
+      a = operationCounter + 1;
+      setOperationCounter(a);
     }
-
-    if (x === "+" || x === "-" || x === "*" || x === "/" || x === "%")
-      setOperationCounter(operationCounter + 1);
 
     if (operationCounter === 1 || operationCounter === 0) {
       setScreen(screen + x);
       // operationCounter = 1;
     }
+    console.log(operationCounter);
 
-    if (operationCounter === 2) {
+    if (a === 2) {
       for (let i = 0; i < screen.length; i++) {
         if (screen[i] === "+") {
           nums = screen.split("+");
           console.log(nums);
-          setScreen(Number(nums[0]) + Number(nums[1]) + "x");
+          setScreen(Number(nums[0]) + Number(nums[1]) + "+");
           setOperationCounter(1);
         }
       }
@@ -77,6 +80,7 @@ const Calculator = () => {
   const clearScreen = () => {
     setScreen("");
   };
+
   return (
     <div className={styles.calculatorContainer}>
       <div className={styles.screenContainer}>

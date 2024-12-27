@@ -1,6 +1,5 @@
 "use client";
 
-import { numbers } from "@/app/sudo/numbers";
 const { useState } = require("react");
 
 const Square = (props) => {
